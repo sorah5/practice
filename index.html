@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Profile card component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+      box-sizing: border-box;
+    }
+    
+    .content{
+      display: flex;
+      height: 500px;
+      margin: 0;
+      background: url(./images/bg-pattern-top.svg),url(./images/bg-pattern-bottom.svg) no-repeat center;
+    }
+    .section{
+      width: 350px;
+      position: relative;
+      height: 376px;
+      margin: 50px auto;
+      background-color: #fff;
+      border-radius: 10px;
+    }
+    .top img{
+      border-radius: 10px 10px 0 0;
+    }
+    .bottom{
+      position: relative;
+    }
+    .bottom img{
+      position: absolute;
+      top: -50px;
+      left: 124px;
+      border: 5px solid #fff;
+      border-radius: 100%;
+    }
+    .bottom_top{
+      text-align: center;
+      position: relative;
+      top: 80px;
+      left: 0;
+      line-height: 15px;
+    }
+    .bottom_top{
+      position: absolute;
+      top: 50px;
+      left: 90px;
+    }
+    .bottom_bottom{
+      position: absolute;
+      top: 150px;
+      left: 20px;
+      border-top: 1px solid lightgray;
+      padding: 5px;
+    }
+    ul{
+      display: flex;
+      text-align: center;
+      margin: 0;
+      padding: 0 10px 0 10px;
+    }
+    li{
+      list-style: none;
+      margin: 0 25px;
+    }
+    strong{
+      font-size: 20px;
+    }
+    p{
+      font-size: 8px;
+      color: gray;
+    }
+    h3{
+      color: grey;
+      font-weight: 400;
+    }
+    
+  </style>
+</head>
+<body> 
+<div class="content">
+  <section class="section">
+    <div class="top">
+      <img src="./images/bg-pattern-card.svg" alt="">
+    </div>
+    <div class="bottom">
+      <img src="./images/image-victor.jpg" alt="" class="photo">
+    <div class="bottom_top">
+    <h2>
+      Victor Crest 26
+    </h2>
+    <h3>London</h3>
+    </div>
+    <div class="bottom_bottom">
+      <ul>
+        <li>
+          <strong>80K</strong>
+          <p>Followers</p>
+        </li>
+        <li>
+          <strong>803K</strong>
+          <p> Likes</p>
+        </li>
+        <li>
+          <strong>1.4K</strong>
+          <p>Photos</p>
+        </li>
+      </ul>
+    </div>
+    </div>
+    </section>
+  
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+ 
+  
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+</body>
+</html>
