@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .slide_wrapper{
+           position: relative; 
+           width: 960px;
+           height: 300px;
+           margin: 0 auto;
+           overflow: hidden;
+        }
+        .slides{
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: left 0.5s ease-in-out;
+           
+        }
+        .slides li:not(:last-child){
+            float: left;
+            margin-right: 30px;
+        }
+        .controls{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .controls span{
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 10px;
+            
+        }
+        .controls span.prev{
+            right: calc(100% + 50px);
+        }
+        .controls span.next{
+            left: calc(100% + 50px);
+        }
+
+
+
+
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide_wrapper">
+        <ul class="slides">
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+            <li><img src="http://placehold.it/300*300" alt=""></li>
+        </ul>
+        
+    </div>
+        <p class="controls">
+            <span class="prev">이전</span>
+            <span class="next">다음</span>
+        </p>
+
+
+
+
+<script>
+    var slides= document.querySelector('.slides'),
+        slide = document.querySelectorAll('.slides li'),
+        currnetIdx = 0,
+        slideCount = slide.length,
+        prevBtn = document.querySelector('.prev'),
+        slideWidth = 300,
+        slideMargin = 30,
+        nextBtn = document.querySelector('.next');
+
+
+        slides.style.width = (slideWidth + slideMargin)*slideCount - slideMargin + 'px';
+
+        function moveSlide(num){
+            slides.style.left = -num * 330 + 'px';
+            currnetIdx = num;
+        }
+        nextBtn.addEventListener('click', function(){
+            if(currnetIdx < slideCount - 3){
+               moveSlide(currnetIdx + 1); 
+            } else{
+                moveSlide(0); 
+            }
+            
+        });
+        prevBtn.addEventListener('click', function(){
+            if(currnetIdx > 0){
+               moveSlide(currnetIdx - 1); 
+            } else{
+                moveSlide(slideCount - 3); 
+            }
+            
+        });
+</script>
+</body>
+</html>
