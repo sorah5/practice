@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        .tab_list li{ float: left; width:33.3333%; border:1px solid red; box-sizing: border-box; margin-left:-1px; text-align: center;}
+        .tab_list li a{ display:inline-block; padding: 2.5% 0; width: 100%;}
+        .tab_list:after{ content: ''; display:block; clear: both;}
+
+    </style>
+</head>
+<body>
+  <div class="top_slide">
+        <ul class="tab_list">
+            <li><a href="javascript:;">1% 정전기 방지 제습함</a></li>
+            <li><a href="javascript:;">PMMA 아크릴제습함</a></li>
+            <li><a href="javascript:;">스텐레스 스틸 제습함</a></li>
+            <li><a href="javascript:;">특수 원목 제습함</a></li>
+            <li><a href="javascript:;">특수 원목 제습함</a></li>
+        </ul>
+        <div class="swiper-container">
+            <ul class="swiper-wrapper">
+                <li class="swiper-slide">
+                dddasd
+                </li>
+                <li class="swiper-slide">
+                dasdasddd3er32
+                </li>
+                <li class="swiper-slide">
+                5555
+                </li>
+                <li class="swiper-slide">
+                5555
+                </li>
+                <li class="swiper-slide">
+                5555
+                </li>
+            </ul>
+        </div>
+ </div>      
+      
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $( document ).ready( function(){
+            var _tabList = $( ".tab_list" );
+            var _tabTarget = _tabList.children( "li" );
+            var swiper = new Swiper('.swiper-container', {
+                    spaceBetween: 30,
+                    centeredSlides: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+        
+            _tabTarget.on( "click", function( $e ){
+            var itemIndex = $( this ).index();
+            swiper.slideTo( itemIndex); //index값으로 slideto에 넘김
+            })
+    });
+
+
+    </script>
+</body>
+</html>

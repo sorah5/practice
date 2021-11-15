@@ -1,0 +1,66 @@
+<body>
+
+    <style>
+        .accordion-cell.expanded .accordion-cell-content{display: block;}
+        .accordion-cell .accordion-cell-content{display: none;}
+    </style>
+    <div class="accordion-wrap">
+        
+        <div class="accordion">
+            <div class="accordion-cell expanded">
+                <p class="title">스텐레스 스틸 데시케이터</p>
+                <div class="accordion-cell-content">
+                    <img src="/data/skin/responsive_pet_familiar_gl_1/images/wib/image_33.png" alt="상품1" >
+                </div>
+            </div>
+            <div class="accordion-cell">
+                <p class="title">스텐레스 스틸 데시케이터</p>
+                <div class="accordion-cell-content">
+                    <img src="/data/skin/responsive_pet_familiar_gl_1/images/wib/image_33.png" alt="상품1" >
+                </div>
+            </div>
+            <div class="accordion-cell">
+                <p class="title">스텐레스 스틸 데시케이터</p>
+                <div class="accordion-cell-content">
+                    <img src="/data/skin/responsive_pet_familiar_gl_1/images/wib/image_33.png" alt="상품1" >
+                </div>
+            </div>
+            <div class="accordion-cell">
+                <p class="title">스텐레스 스틸 데시케이터</p>
+                <div class="accordion-cell-content">
+                    <img src="/data/skin/responsive_pet_familiar_gl_1/images/wib/image_33.png" alt="상품1" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var num = -1;
+
+            $('.accordion-cell').click(function(){
+                var idx = $(this).index();
+                num = idx;
+                if($(this).hasClass('expanded')) {
+                    $(this).removeClass('expanded');
+                } else {
+                    $(this).addClass('expanded');	
+                    $(this).siblings().removeClass('expanded');
+                }
+            });
+
+            function clickAuto(){
+                $acc = $('.accordion-cell');
+                if(num < $acc.length - 1) num++;
+                else num = 0;
+                $acc.eq(num).trigger('click');
+            }
+
+            var auto = setInterval(clickAuto, 500);
+        });
+    </script>
+</body>

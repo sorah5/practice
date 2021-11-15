@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+/>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <div>
+        <ul>
+          <li class="tablinks active" id="tab1">Tab1</li>
+          <li class="tablinks" id="tab2">Tab2</li>
+          <li class="tablinks" id="tab3">Tab3</li>
+        </ul>
+      </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="swiper-slide-sub">
+              <!-- Tab1 내용 -->
+              <ul>
+                <li>li1</li>
+                <li>li2</li>
+                <li>li2</li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-sub">
+              <!-- Tab2 내용 -->
+              <ul>
+                <li>li1</li>
+                <li>li2</li>
+                <li>li2</li>
+              </ul>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="swiper-slide-sub">
+              <!-- Tab3 내용 -->
+              <ul>
+                <li>li1</li>
+                <li>li2</li>
+                <li>li2</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+    init();
+});
+ 
+function init() {
+ 
+    var swiper = new Swiper('.swiper-container', {
+        autoHeight: true,
+        on: {
+            init: function () {
+                $(".swiper-slide").css("background-color", 'transparent');
+                $(".swiper-slide").css("text-align", 'left');
+            },
+            slideChange: function () {
+                var slider = this;
+                if (swiper.activeIndex == 0) {
+                    $('#tab1').addClass('active');
+                    $('#tab2').removeClass('active');
+                    $('#tab3').removeClass('active');
+ 
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+ 
+                } else if (swiper.activeIndex == 1) {
+                    $('#tab1').removeClass('active');
+                    $('#tab2').addClass('active');
+                    $('#tab3').removeClass('active');
+ 
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+ 
+                } else if (swiper.activeIndex == 2) {
+                    $('#tab1').removeClass('active');
+                    $('#tab2').removeClass('active');
+                    $('#tab3').addClass('active');
+ 
+                    document.body.scrollTop = 0; // For Safari
+                    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+ 
+                }
+            }
+        }
+    });
+ 
+    $('#tab1').click(function () {
+        swiper.slideTo(0, 300, false);
+    });
+    $('#tab2').click(function () {
+        swiper.slideTo(1, 300, false);
+    });
+    $('#tab3').click(function () {
+        swiper.slideTo(2, 300, false);
+    });
+ 
+}
+ 
+
+
+    </script>
+</body>
+</html>

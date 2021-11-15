@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+	font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.mainMenu{
+    width: 250px;
+    display: block;
+    overflow: hidden;
+}
+.nav{
+    overflow: hidden;
+	border-bottom:1px solid #21aabf;
+}
+.btn{
+    display: block;
+    padding: 15px 20px;
+    background-color: #3ec8dd;
+    color: #fff;
+    position: relative;
+
+}
+.subMenu{
+    background: #ddd;
+    overflow: hidden;
+    transition: max-height 0.7s;
+    max-height: 0;
+}
+.subMenu a{
+    display: block;
+    padding: 15px 20px;
+    color: #222;
+    font-size: 14px;
+    border-bottom: 1px solid #eaeaea;
+    position: relative;
+    
+}
+.subMenu a:after{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+.subMenu a:hover{
+    background: #fafafa;
+   transition: all 0.3s;
+    border-bottom: 1px solid #c8c8c8;
+}
+.subMenu a:last-child{
+    border:none;
+}
+.nav:target .subMenu{
+    max-height: 10em;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <ui class="mainMenu">
+            <li class="nav" id="account">
+                <a href="#account" class="btn">회사소개</a>
+                <div class="subMenu">
+                    <a href="">인사말</a>
+                    <a href="">연혁</a>
+                    <a href="">비전</a>
+                </div>
+            </li>
+            <li class="nav" id="about">
+                <a href="#about" class="btn">제품소개</a>
+                <div class="subMenu">
+                    <a href="">제품소개1</a>
+                    <a href="">제품소개2</a>
+                </div>
+            </li>
+            <li class="nav" id="support">
+                <a href="#support" class="btn">고객지원</a>
+                <div class="subMenu">
+                    <a href="">자주묻는 질문</a>
+                </div>
+            </li>
+            <li class="nav">
+                <a href="#" class="btn">1:1상담</a>
+            </li>
+        </ui>
+    </div>
+</body>
+</html>
